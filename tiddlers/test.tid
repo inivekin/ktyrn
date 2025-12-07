@@ -1,0 +1,20 @@
+created: 20250928011720388
+creator: inivekin
+modified: 20250930095037432
+modifier: inivekin
+tags: 
+title: test
+
+    <$list filter="[tag[context-state]]">
+  <$button>
+   <<currentTiddler>>: {{!!scheduled-slots}} <br>
+{{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}} <br>
+   {{{ [{!!disabled}match[true]] }}}
+    <$action-setfield $field=scheduled-max $value=4 />
+    <$action-setfield $field=scheduled-slots $value=0 />
+</$button>
+    </$list>
+
+    <$list filter="[range[5]]">
+        <<currentTiddler>>
+    </$list>

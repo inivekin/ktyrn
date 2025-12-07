@@ -1,0 +1,193 @@
+:root {
+  --structural-bg: rgb(45 ,72 , 85);
+  --structural-masked: rgb(150,176, 159);
+  --structural-active: rgb(181,204, 215);
+  --structural-accent: rgb(199 ,69 , 68);
+  --energetic-bg:  rgb(70 ,30 , 30);
+  --energetic-masked:  rgb(66 ,54 , 87);
+  --energetic-active: rgb(141 ,87, 132);
+  --energetic-accent: rgb(213,203 , 98);
+  --informative-bg:  rgb(67 ,64 , 34);
+  --informative-masked:  rgb(61,116 , 76);
+  --informative-active: rgb(161,185, 112);
+  --informative-accent: rgb(255,157 , 46);
+  --macro-bg:  rgb(34 ,34 , 34);
+  --macro-masked: rgb(122,122, 122);
+  --macro-active: rgb(163,163, 163);
+  --macro-accent: rgb(226,226, 226);
+}
+
+html button {
+    background: transparent;
+    border-color: transparent;
+}
+
+.tc-tiddler-frame { padding: 0; margin: 0; }
+.tc-titlebar { font-size: 1em; }
+.tc-subtitle { line-height: 0; display: none; } 
+.sq-story-rivertwo-scrollable { margin-bottom: 50vh; }
+
+cosmic-microwave-background {
+    max-height: 50vmin;
+    width: min(50vh, 100vw);
+    display: block;
+    background: var(--macro-bg);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+context-connector {
+    color: var(--macro-active);
+    transition: color 1s ease;
+    @starting-style {
+      color: transparent;
+    }
+}
+.transit {
+  border-color: var(--macro-active);
+    transition: border-color 1s ease;
+    @starting-style {
+      border-color: transparent;
+    }
+}
+.satellite {
+  color: transparent;
+}
+
+.orbit-11, universal-schedular {
+  background-color: var(--macro-masked);
+  cursor: pointer;
+
+  fill: var(--macro-bg);
+  & {
+    & > * profile-outline .energy.bg { transition: fill .6s ease; fill: var(--energetic-bg); }
+    & > * profile-outline .energy.masked { transition: fill .6s ease; fill: var(--energetic-masked); }
+    & > * profile-outline .energy.active { transition: fill .6s ease; fill: var(--energetic-active); }
+    & > * profile-outline .energy.accent { transition: fill .6s ease; fill: var(--energetic-accent); }
+    & > * profile-outline .structure.bg { transition: fill .6s ease; fill: var(--structural-bg); }
+    & > * profile-outline .structure.masked { transition: fill .6s ease; fill: var(--structural-masked); }
+    & > * profile-outline .structure.active { transition: fill .6s ease; fill: var(--structural-active); }
+    & > * profile-outline .structure.accent { transition: fill .6s ease; fill: var(--structural-accent); }
+    & > * profile-outline .information.bg { transition: fill .6s ease; fill: var(--informative-bg); }
+    & > * profile-outline .information.masked { transition: fill .6s ease; fill: var(--informative-masked); }
+    & > * profile-outline .information.active { transition: fill .6s ease; fill: var(--informative-active); }
+    & > * profile-outline .information.accent { transition: fill .6s ease; fill: var(--informative-accent); }
+  }
+  &:hover {
+    & > * profile-outline .masked { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
+    & > * profile-outline .active { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
+    & > * profile-outline .accent { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
+    & > * profile-outline .bg { fill: var(--macro-bg); }
+  }
+  pointer-events: all;
+}
+
+o-arc.textual {
+  color: var(--macro-active);
+  --o-fill: none !important;
+}
+
+/* .portrait .structure {
+  &.bg { fill: var(--structural-bg); }
+  &.masked { fill: var(--structural-masked); }
+  &.active { fill: var(--structural-active); }
+  &.accent { fill: var(--structural-accent); }
+}
+.portrait .energy {
+  &.bg { fill: var(--energetic-bg); }
+  &.masked { fill: var(--energetic-masked); }
+  &.active { fill: var(--energetic-active); }
+  &.accent { fill: var(--energetic-accent); }
+} 
+.portrait .information {
+  &.bg { fill: var(--informative-bg); }
+  &.masked { fill: var(--informative-masked); }
+  &.active { fill: var(--informative-active); }
+  &.accent { fill: var(--informative-accent); }
+} */
+
+.being.information {
+  &.bg { fill: var(--macro-bg); }
+  &.masked { fill: var(--macro-masked); }
+  &.active { fill: var(--macro-active); }
+  &.accent { fill: var(--macro-accent); }
+
+  &:hover .bg { fill: var(--informative-bg); }
+  &:hover .masked { fill: var(--informative-masked); }
+  &:hover .active { fill: var(--informative-active); }
+  &:hover .accent { fill: var(--informative-accent); }
+}
+
+o-arc.accent {
+    &.energy { --o-fill: var(--energetic-accent); }
+    &.structure { --o-fill: var(--structural-accent); }
+    &.information { --o-fill: var(--informative-accent); }
+}
+
+o-arc.inactive {
+    --o-fill: transparent;
+}
+
+.structural, .energetic, .informative {
+}
+
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+button {
+  pointer-events: all;
+
+  .bg, .masked, .active, .accent {
+    transition: fill .4s ease;
+    @starting-style {
+      background-color: transparent;
+    }
+  }
+  &:not([disabled=true]):hover > svg .structure.accent { fill: var(--structural-bg); }
+  &:not([disabled=true]):hover > svg .structure.bg { fill: var(--structural-accent); }
+  & > svg .structure.accent { fill: var(--structural-accent); }
+  & > svg .structure.bg { fill: var(--structural-bg); }
+  & > svg .structure.masked { fill: var(--structural-masked); }
+  & > svg .structure.active { fill: var(--structural-active); }
+
+  &:not([disabled=true]):hover > svg .information.accent { fill: var(--informative-bg); }
+  &:not([disabled=true]):hover > svg .information.bg { fill: var(--informative-accent); }
+  & > svg .information.accent { fill: var(--informative-accent); }
+  & > svg .information.bg { fill: var(--informative-bg); }
+  & > svg .information.masked { fill: var(--informative-masked); }
+  & > svg .information.active { fill: var(--informative-active); }
+
+  &:not([disabled=true]):hover > svg .energy.accent { fill: var(--energetic-bg); }
+  &:not([disabled=true]):hover > svg .energy.bg { fill: var(--energetic-accent); }
+  & > svg .energy.accent { fill: var(--energetic-accent); }
+  & > svg .energy.bg { fill: var(--energetic-bg); }
+  & > svg .energy.masked { fill: var(--energetic-masked); }
+  & > svg .energy.active { fill: var(--energetic-active); }
+
+  &[disabled=true] > svg .masked { fill: var(--macro-masked); }
+  &[disabled=true] > svg .active { fill: var(--macro-active); }
+  &[disabled=true] > svg .accent { fill: var(--macro-accent); }
+  &[disabled=true] > svg .bg { fill: var(--macro-bg); }
+
+  & .scheduler:checked ~ svg .structure.bg { fill: var(--structural-bg); }
+  & .scheduler:checked ~ svg .structure.masked { fill: var(--structural-masked); }
+  & .scheduler:checked ~ svg .structure.active { fill: var(--structural-active); }
+  & .scheduler:checked ~ svg .structure.accent { fill: var(--structural-accent); }
+  & .scheduler:checked ~ svg .information.bg { fill: var(--informative-bg); }
+  & .scheduler:checked ~ svg .information.masked { fill: var(--informative-masked); }
+  & .scheduler:checked ~ svg .information.active { fill: var(--informative-active); }
+  & .scheduler:checked ~ svg .information.accent { fill: var(--informative-accent); }
+  & .scheduler:checked ~ svg .energy.bg { fill: var(--energetic-bg); }
+  & .scheduler:checked ~ svg .energy.masked { fill: var(--energetic-masked); }
+  & .scheduler:checked ~ svg .energy.active { fill: var(--energetic-active); }
+  & .scheduler:checked ~ svg .energy.accent { fill: var(--energetic-accent); }
+}
+tr {
+  transition: background-color .4s ease;
+  background-color: transparent;
+  @starting-style {
+    background-color: var(--macro-accent);
+  }
+}

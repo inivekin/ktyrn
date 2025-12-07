@@ -1,0 +1,10 @@
+{
+    "created": "20250921011216811",
+    "title": "$:/plugins/kotforn/orbit",
+    "author": "inivekin",
+    "description": "radial html styling",
+    "name": "orbits",
+    "plugin-type": "plugin",
+    "version": "0.1.2",
+    "modified": "20250921011216811"
+}

@@ -1,0 +1,8 @@
+created: 20250928005708120
+creator: inivekin
+modified: 20250928005716258
+modifier: inivekin
+tags: 
+title: lut-icon.svg
+
+<svg viewBox="0 0 53.59 53.6"> <path class="information bg" id="lut-bg" d="M 6.956,44.81 A 26.81,26.81 0 0 1 8.616,7.101 26.81,26.81 0 0 1 46.38,8.501 26.81,26.81 0 0 1 45.28,46.21 26.81,26.81 0 0 1 7.506,45.41" /> <rect class="information masked" id="table-2" width="21.82" height="21.45" x="8.226" y="10.15" rx="0" ry="0" /> <rect class="information masked" id="table-1" width="16.4" height="17.91" x="33.85" y="16.45" /> <rect class="information masked" id="table-0" width="15.64" height="13.25" x="13.29" y="34.85" /> <rect class="information active" id="table-name-0" width="19.68" height="4.163" x="9.238" y="10.95" /> <rect class="information active" id="table-name-1" width="14.13" height="3.28" x="34.86" y="17.65" /> <rect class="information active" id="table-name-2" width="14" height="3.28" x="14.17" y="35.55" /> <rect class="information accent" id="route-3" width="2.902" height="0.8831" x="30.7" y="24.65" /> <rect class="information accent" id="route-2" width="2.506" height="0.5435" x="30.59" y="32.65" /> <rect class="information accent" id="route-1" width="0.5" height="11.23" x="30.59" y="32.85" /> <rect class="information accent" id="route-0" width="1.766" height="0.742" x="29.31" y="43.55" /> <path class="information accent" id="selected-row" d="M 10.01,23.05 H 28.55 V 26.85 H 10.01 Z M 9.428,22.75 H 29.08 V 27.25 H 9.428 Z" /> </svg>

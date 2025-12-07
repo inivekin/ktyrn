@@ -1,0 +1,21 @@
+created: 20250930095011824
+creator: inivekin
+modified: 20251012044315125
+modifier: inivekin
+tags: 
+title: choiceButtonTemplate
+
+<$let supertitle={{!!title}} 
+          inlineclass={{{ [{!!context-axis}addsuffix[ capsule icon ]addsuffix{!!title}] }}} 
+          arcclass={{{ [{!!context-axis}addsuffix[ scheduled accent gap-7 outer-orbit shrink-90]] }}}
+          arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
+          inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}>
+    <$button disabled={{!!disabled}} set="$:/state/ink/continue" setTo=<<now "0hhmmssXXX">> >
+    <$action-setfield $field=scheduled-slots $value={{{ [{!!scheduled-max}] }}} />
+    <$list filter="[tag[context-state]!title<supertitle>]">
+    <$action-setfield $field=scheduled-slots $value={{{ [{!!scheduled-slots}subtract[1]max[0]] }}} />        
+    </$list>
+    <$transclude $tiddler={{{ [{!!title}addsuffix[-icon.svg]] }}} />
+   </$button>
+   <<counter>>
+</$let>

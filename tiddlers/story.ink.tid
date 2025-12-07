@@ -1,0 +1,59 @@
+created: 20250921064442733
+creator: inivekin
+modified: 20250930080524412
+modifier: inivekin
+tags: 
+title: story.ink
+
+argan: as you understand it, one used to tell the night from pins of light in the sky, and the morning from a thother of lye rising out the lead, in which our bodies would be barely the bulk of a relative grot. # argan
+argan: now see the nightward shift, the fog of the day that alwhere cloaks the environ thins to bewray the lightlines in the lift, as like a newborn birthed fom a mist to witness a world.  # argan
+argan: a world of three axels, with each its bearing inborn in us, # argan
+-> intro_framework
+= intro_framework
+argan: your framework # argan
+  * [imu: inertial measurement unit] # imu
+    IMU:INF: scheduler, you need to turn around. it is behind you. # imu
+    -> intro_birr
+  * [exo: exoskeleton] # exo
+    EXO:INF: every part is intact and operational, scheduler. get up. # exo
+    -> intro_birr
+  * [hry: hierarchy] # hry
+    HRY:INF: there are pains to assess. lets get our parts in order, scheduler. # hry
+    -> intro_birr
+  * [cbm: cable management] # cbm
+    CBM:INF: there is too much going on - we should stick to a focus, schedular. # cbm
+    -> intro_birr
+= intro_birr
+argan: your birr # argan
+  * [piezoelectrics] # pzl
+    PZL:INF: feel it in the air, scheduler? something is about ready to zap. # pzl
+    -> intro_wits
+  * [re_flux] # rfx
+    RFX:INF: oh great. conciousness. i'm sure there will be no negative consequences to this. # rfx
+    -> intro_wits
+  * [battery] # bty
+    BTY:INF: reserves are full, but don't get reckless, yeah? # bty
+    -> intro_wits
+  * [quintessence] # qnt
+    QNT:INF: give your fingers a stretch. ball them up into a fist. breathe in. breathe out. # qnt
+    -> intro_wits
+= intro_wits
+argan: and your wits. # argan
+  * [lookup table] # lut
+    LUT:INF: creating table, verifying backups... pretty fucking empty. # lut
+    -> finished_story
+  * [photogrammetry] # pgm
+    PGM:INF: green below, black above and white surrounding. but something grey and many shadowed connecting them. # pgm
+    -> finished_story
+  * [antenna array] # ant
+    ANT:INF: noise floor acquired, waiting for the signal... # ant
+    -> finished_story
+  * [nybbling] # nyb
+    NYB:INF: setting clock rate for peripherals... # nyb
+    -> finished_story
+
+-> finished_story
+
+=== finished_story
+
+-> END

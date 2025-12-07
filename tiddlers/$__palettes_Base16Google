@@ -1,0 +1,127 @@
+alert-background: #CC342B
+alert-border: #1D1F21
+alert-highlight: #CC342B
+alert-muted-foreground: #F96A38
+background: #1D1F21
+blockquote-bar: <<colour muted-foreground>>
+button-foreground: <<colour foreground>>
+code-background: #282A2E
+code-border: #1D1F21
+code-foreground: #E0E0E0
+diff-delete-background: #CC342B
+diff-delete-foreground: <<colour foreground>>
+diff-equal-background: 
+diff-equal-foreground: <<colour foreground>>
+diff-insert-background: #198844
+diff-insert-foreground: <<colour foreground>>
+diff-invisible-background: 
+diff-invisible-foreground: <<colour muted-foreground>>
+dirty-indicator: <<macro-active>>
+download-background: #3971ED
+download-foreground: <<colour background>>
+dragger-background: <<colour foreground>>
+dragger-foreground: <<colour background>>
+dropdown-background: <<colour background>>
+dropdown-border: <<colour background>>
+dropdown-tab-background-selected: #C5C8C6
+dropdown-tab-background: #373b41
+dropzone-background: #1D1F21
+external-link-background-hover: inherit
+external-link-background-visited: inherit
+external-link-background: inherit
+external-link-foreground-hover: inherit
+external-link-foreground-visited: #A36AC7
+external-link-foreground: #3971ED
+foreground: #C5C8C6
+menubar-background: #1D1F21
+menubar-foreground: #C5C8C6
+message-background: #373B41
+message-border: #373B41
+message-foreground: #B4B7B4
+modal-backdrop: <<colour foreground>>
+modal-background: <<colour background>>
+modal-border: #1D1F21
+modal-footer-background: #1D1F21
+modal-footer-border: #1D1F21
+modal-header-border: #1D1F21
+muted-foreground: #B4B7B4
+notification-background: <<colour primary>>
+notification-border: #1D1F21
+page-background: #1D1F21
+pre-background: #1D1F21
+pre-border: #1D1F21
+primary: #fba922
+select-tag-background: #282A2E
+select-tag-foreground: <<colour foreground>>
+selection-background: #373B41
+selection-foreground: <<colour foreground>>
+sidebar-button-foreground: <<colour foreground>>
+sidebar-controls-foreground-hover: #E0E0E0
+sidebar-controls-foreground: #C5C8C6
+sidebar-foreground-shadow: transparent
+sidebar-foreground: #B4B7B4
+sidebar-muted-foreground-hover: #198844
+sidebar-muted-foreground: #B4B7B4
+sidebar-tab-background-selected: #282A2E
+sidebar-tab-background: #1D1F21
+sidebar-tab-border-selected: #1d1f21
+sidebar-tab-border: #1D1F21
+sidebar-tab-divider: <<colour page-background>>
+sidebar-tab-foreground-selected: #E0E0E0
+sidebar-tab-foreground: <<colour tab-foreground>>
+sidebar-tiddler-link-foreground-hover: #FBA922
+sidebar-tiddler-link-foreground: #3971ED
+site-title-foreground: <<colour tiddler-title-foreground>>
+static-alert-foreground: #CC342B
+tab-background-selected: #282A2E
+tab-background: #1D1F21
+tab-border-selected: #1D1F21
+tab-border: #1D1F21
+tab-divider: #282A2E
+tab-foreground-selected: #E0E0E0
+tab-foreground: #C5C8C6
+table-border: #282A2E
+table-footer-background: #282A2E
+table-header-background: #282A2E
+tag-background: #198844
+tag-foreground: #B4B7B4
+tiddler-background: #1d1f21
+tiddler-border: #1d1f21
+tiddler-controls-foreground-hover: 
+tiddler-controls-foreground-selected: #C5C8C6
+tiddler-controls-foreground: #B4B7B4
+tiddler-editor-background: #1D1F21
+tiddler-editor-border-image: #1D1F21
+tiddler-editor-border: #1D1F21
+tiddler-editor-fields-even: #282A2E
+tiddler-editor-fields-odd: #1D1F21
+tiddler-info-background: #1D1F21
+tiddler-info-border: #1D1F21
+tiddler-info-tab-background: #1D1F21
+tiddler-link-background: <<colour background>>
+tiddler-link-foreground: <<colour primary>>
+tiddler-subtitle-foreground: #B4B7B4
+tiddler-title-foreground: #C5C8C6
+toolbar-new-button: 
+toolbar-options-button: 
+toolbar-save-button: 
+toolbar-info-button: 
+toolbar-edit-button: 
+toolbar-close-button: 
+toolbar-delete-button: 
+toolbar-cancel-button: 
+toolbar-done-button: 
+untagged-background: #1D1F21
+very-muted-foreground: #969896
+wikilist-background: <<colour page-background>>
+wikilist-toolbar-background: <<colour background>>
+wikilist-item: <<colour background>>
+wikilist-title: <<colour foreground>>
+wikilist-info: <<colour muted-foreground>>
+wikilist-button-open: #3971ED
+wikilist-button-open-hover: #FBA922
+wikilist-button-reveal: #198844
+wikilist-button-reveal-hover: #FBA922
+wikilist-button-remove: #CC342B
+wikilist-button-remove-hover: #FBA922
+button-border: #1d1f21

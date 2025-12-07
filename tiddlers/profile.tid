@@ -1,0 +1,92 @@
+created: 20250921012308617
+creator: inivekin
+modified: 20251019015901581
+modifier: inivekin
+title: profile
+type: 
+
+        <cosmic-microwave-background> <universal-scheduler class="bigbang at-bottom">
+        <profile-align class="gravity-spot"><profile-offset class="orbit-11"><profile-orbit class="satellite angle-0">
+        <profile-focus class="gravity-spot">
+                    <profile-outline class="orbit-11"><profile-inline class="capsule">{{profile-icon.svg}}</profile-inline></profile-outline>
+
+                    <audio-visual class="orbit-4"><context-connector class="vector inner-orbit grow-4x angle-45"><connector-label class="capsule">sensorium<br>aggregate</connector-label></context-connector></audio-visual>
+
+                    <energetic-orbit class="orbit-10 transit">
+                        <context-connector class="vector inner-orbit grow-3x angle-45"><connector-label class="capsule">reflex<br>impulse</connector-label></context-connector>
+                        <context-connector class="vector inner-orbit grow-5x angle-135"></context-connector>
+                        <context-connector class="vector inner-orbit grow-3x angle-225"><connector-label class="capsule flip">signal<br>recall</connector-label></context-connector>
+                        <context-connector class="vector inner-orbit grow-5x angle-315"></context-connector>
+                        <context-connector class="side"><connector-label class="capsule flip">reaction</connector-label></context-connector>
+                        <context-connector class="side"><connector-label class="capsule flip">extrinsic</connector-label></context-connector>
+                        <context-connector class="side"><connector-label class="capsule">retention</connector-label></context-connector>
+                        <context-connector class="side"><connector-label class="capsule flip">intrinsic</connector-label></context-connector>
+                    </energetic-orbit>
+                    <infostructural-orbit class="orbit-2">
+                        <informative-orbit class="satellite angle-315"> <informative-focus class="gravity-spot">
+                                <context-connector class="orbit-4 transit"></context-connector>
+                        </informative-focus> </informative-orbit>
+                        <structural-orbit class="satellite angle-135 structural"><structural-focus class="gravity-spot">
+                                <structural-outline class="orbit-5">
+                                    <context-connector class="side"></context-connector>
+                                    <context-connector class="side"><connector-label class="capsule flip">interface</connector-label></context-connector>
+                                    <context-connector class="side"><connector-label class="capsule">shielding</connector-label></context-connector>
+                                    <context-connector class="side"></context-connector>
+                                    <context-connector class="vector inner-orbit grow-2x angle-45"></context-connector>
+                                    <context-connector class="vector inner-orbit grow-2x angle-135"><connector-label class="capsule">control<br>filter</connector-label></context-connector>
+                                    <context-connector class="vector inner-orbit grow-2x angle-225"></context-connector>
+                                    <!-- div class="vector inner-orbit grow-2x angle-315"></div -->
+                                    <context-orbit class="satellite angle-45 structural"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{hry||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                    <context-orbit class="satellite angle-135 structural"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{exo||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                    <context-orbit class="satellite angle-225 structural"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{cbm||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                    <context-orbit class="satellite angle-315 informative"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{nyb||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                </structural-outline>
+                                <context-outline class="orbit-1">
+                                          {{imu||contextButtonTemplate}}
+                                </context-outline>
+                        </structural-focus></structural-orbit>
+                        <informative-orbit class="satellite angle-315"><informative-focus class="gravity-spot">
+                                <informative-labels class="orbit-4">
+                                    <o-arc class="textual outer-orbit shrink-50 angle-315">pattern recognition</o-arc>
+                                    <o-arc class="textual"></o-arc>
+                                    <o-arc class="textual inner-orbit grow-0.2x angle-190">auto-response</o-arc>
+                                </informative-labels>
+                                <informative-outline class="orbit-4">
+                                    <context-orbit class="satellite angle-80 informative"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{pgm||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                    <!-- div class="satellite angle-135"></div -->
+                                    <context-orbit class="satellite angle-190 informative"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{ant||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                    <context-orbit class="satellite angle-315 informative"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{lut||contextButtonTemplate}}
+                                    </context-outline></context-focus></context-orbit>
+                                </informative-outline>
+                        </informative-focus></informative-orbit>
+                    </infostructural-orbit>
+                    <energetic-orbit class="orbit-10">
+                        <context-orbit class="satellite angle-45 energetic"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{pzl||contextButtonTemplate}}
+                        </context-outline></context-focus></context-orbit>
+                        <context-orbit class="satellite angle-135 energetic"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{rfx||contextButtonTemplate}}
+                        </context-outline></context-focus></context-orbit>
+                        <context-orbit class="satellite angle-225 energetic"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{bty||contextButtonTemplate}}
+                        </context-outline></context-focus></context-orbit>
+                        <context-orbit class="satellite angle-315 energetic"><context-focus class="gravity-spot"><context-outline class="orbit-1">
+                                          {{qnt||contextButtonTemplate}}
+                        </context-outline></context-focus></context-orbit>
+                    </energetic-orbit>
+        </profile-focus></profile-orbit></profile-offset></profile-align>
+        </universal-scheduler> </cosmic-microwave-background>
+<<orbits-cmb>>

@@ -1,0 +1,25 @@
+created: 20250928021016018
+creator: inivekin
+modified: 20251019025455524
+modifier: inivekin
+tags: 
+title: contextButtonTemplate
+
+<$let supertitle={{!!title}} 
+          inlineclass={{{ [{!!context-axis}addsuffix[ capsule icon ]addsuffix{!!title}] }}} 
+          arcclass={{{ [{!!context-axis}addsuffix[ scheduled accent gap-7 outer-orbit shrink-90]] }}}
+          arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
+          inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}>
+    <$list filter="[range<inactive>]">
+        <o-arc class=<<arcclass_inactive>> > </o-arc>
+    </$list><$list filter="[range{!!scheduled-slots}]"><o-arc class=<<arcclass>> > </o-arc>
+    </$list><context-inline class=<<inlineclass>> ><$button disabled={{!!disabled}} set="$:/state/ink/continue" setTo={{{ [<now "0hhmmssXXX">addsuffix{!!title}] }}} >
+    <$action-setfield $field=scheduled-slots $value={{{ [{!!scheduled-max}] }}} />
+    <$action-setfield $field=last-scheduled $value=true />
+    <$list filter="[tag[context-state]!title<supertitle>]">
+    <$action-setfield $field=scheduled-slots $value={{{ [{!!scheduled-slots}subtract[1]max[0]] }}} />
+    <$action-setfield $field=last-scheduled $value=false />
+    </$list>
+    <$transclude $tiddler={{{ [{!!title}addsuffix[-icon.svg]] }}} />
+   </$button></context-inline>
+</$let>
