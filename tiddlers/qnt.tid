@@ -3,9 +3,11 @@ created: 20250928025502257
 creator: inivekin
 disabled: false
 last-scheduled: false
-modified: 20251026044649456
+modified: 20251229032537396
 modifier: inivekin
 scheduled-max: 4
-scheduled-slots: 0
+scheduled-slots: 3
 tags: context-state
 title: qnt
+type: text/vnd.tiddlywiki
+yieldings: pzl bty lut

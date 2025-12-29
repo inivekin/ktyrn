@@ -3,9 +3,11 @@ created: 20250928013038139
 creator: inivekin
 disabled: false
 last-scheduled: false
-modified: 20251026044649451
+modified: 20251229032521575
 modifier: inivekin
 scheduled-max: 4
-scheduled-slots: 0
+scheduled-slots: 1
 tags: context-state
 title: exo
+type: text/vnd.tiddlywiki
+yieldings: cbm imu hry rfx

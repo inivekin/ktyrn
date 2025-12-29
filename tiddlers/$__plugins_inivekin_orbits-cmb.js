@@ -110,8 +110,8 @@ exports.run = function() {
       };
     }
   const myObserver = new ResizeObserver(debounce((entries) => {
-      console.log("resizing");
-      Orbit.resize('cosmic-microwave-background');
+      // console.log("resizing");
+      // Orbit.resize('cosmic-microwave-background');
   }));
 
   // Inside a custom widget's render method

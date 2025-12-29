@@ -3,9 +3,11 @@ created: 20250928025449542
 creator: inivekin
 disabled: no
 last-scheduled: false
-modified: 20251026044649454
+modified: 20251229032528967
 modifier: inivekin
 scheduled-max: 4
-scheduled-slots: 0
+scheduled-slots: 2
 tags: context-state
 title: pgm
+type: text/vnd.tiddlywiki
+yieldings: pzl hry nyb imu lut

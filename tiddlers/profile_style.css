@@ -23,28 +23,27 @@ html button {
 }
 
 .tc-tiddler-frame { padding: 0; margin: 0; }
-.tc-titlebar { font-size: 1em; }
+.tc-titlebar { font-size: 2em; }
 .tc-subtitle { line-height: 0; display: none; } 
-.sq-story-rivertwo-scrollable { margin-bottom: 50vh; }
 
 cosmic-microwave-background {
-    max-height: 50vmin;
-    width: min(50vh, 100vw);
+    height: 50vmin;
+    width: 100%; /*min(50vh, 100vw);*/
     display: block;
     background: var(--macro-bg);
-    position: fixed;
+    /*position: fixed;
     bottom: 0;
-    right: 0;
+    right: 0;*/
 }
 context-connector {
-    color: var(--macro-active);
+    color: var(--macro-masked);
     transition: color 1s ease;
     @starting-style {
       color: transparent;
     }
 }
 .transit {
-  border-color: var(--macro-active);
+  border-color: var(--macro-masked);
     transition: border-color 1s ease;
     @starting-style {
       border-color: transparent;
@@ -55,7 +54,6 @@ context-connector {
 }
 
 .orbit-11, universal-schedular {
-  background-color: var(--macro-masked);
   cursor: pointer;
 
   fill: var(--macro-bg);

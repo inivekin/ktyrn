@@ -1,9 +1,10 @@
 created: 20250928021016018
 creator: inivekin
-modified: 20251019025455524
+modified: 20251229032442827
 modifier: inivekin
 tags: 
 title: contextButtonTemplate
+type: text/vnd.tiddlywiki
 
 <$let supertitle={{!!title}} 
           inlineclass={{{ [{!!context-axis}addsuffix[ capsule icon ]addsuffix{!!title}] }}} 
@@ -13,13 +14,29 @@ title: contextButtonTemplate
     <$list filter="[range<inactive>]">
         <o-arc class=<<arcclass_inactive>> > </o-arc>
     </$list><$list filter="[range{!!scheduled-slots}]"><o-arc class=<<arcclass>> > </o-arc>
-    </$list><context-inline class=<<inlineclass>> ><$button disabled={{!!disabled}} set="$:/state/ink/continue" setTo={{{ [<now "0hhmmssXXX">addsuffix{!!title}] }}} >
-    <$action-setfield $field=scheduled-slots $value={{{ [{!!scheduled-max}] }}} />
-    <$action-setfield $field=last-scheduled $value=true />
-    <$list filter="[tag[context-state]!title<supertitle>]">
-    <$action-setfield $field=scheduled-slots $value={{{ [{!!scheduled-slots}subtract[1]max[0]] }}} />
-    <$action-setfield $field=last-scheduled $value=false />
-    </$list>
+    </$list><context-inline class=<<inlineclass>> >
+
+<$let last-scheduled={{{ [tag[context-state]last-scheduled[true]] }}} is-disabled={{{ [{schedule!!yieldings}enlist-input[]last[]get[yieldings]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[yes]match[yes]] }}}>
+<$button disabled=<<is-disabled>> set="$:/state/ink/continue" setTo={{{ [<now "0hhmmssXXX">addsuffix{!!title}] }}} >
+    <$let current-context={{{ [{schedule!!yieldings}enlist-input[ ]first[]] }}} next-context={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} existing-value={{{ [{schedule!!yieldings}enlist-input[ ]first[]get[scheduled-slots]] }}} decrement={{{ [{schedule!!yieldings}enlist-input[ ]first[]get[scheduled-slots]subtract[1]max[0]] }}} >
+        <$action-setfield $tiddler=<<current-context>> $field=scheduled-slots $value={{{ [<next-context>match<supertitle>then<decrement>else<existing-value>] }}} />
+    </$let>
+    <$let next-context={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} existing-value={{{ [{schedule!!yieldings}enlist-input[ ]last[]get[scheduled-slots]] }}} increment={{{ [{schedule!!yieldings}enlist-input[ ]last[]get[scheduled-slots]add[1]] }}}>
+    <$action-setfield $tiddler=<<next-context>> $field=scheduled-slots $value={{{ [<next-context>match<currentTiddler>then<increment>else<existing-value>] }}} />
+        <$list filter="[{schedule!!yieldings}enlist-input[ ]rest[]butlast[]]">
+            <$let existing-value={{{ [<currentTiddler>get[scheduled-slots]] }}} decrement={{{ [<currentTiddler>get[scheduled-slots]subtract[1]max[0]] }}}>
+            <$action-setfield $tiddler=<<currentTiddler>> $field=scheduled-slots $value={{{ [<next-context>match<supertitle>then<decrement>else<existing-value>] }}} />
+            </$let>
+        </$list>
+    </$let>
+
+<$let new-yield={{{ [{schedule!!yieldings}addsuffix[ ]addsuffix<currentTiddler>] }}} ><$action-setfield $tiddler=schedule $field=yieldings $value={{{ [{schedule!!yieldings}enlist-input[ ]allbefore:include<currentTiddler>format:titlelist[]join[ ]else<new-yield>] }}} />
+</$let>
+
+<$let new-yield={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} >
+    <$action-setfield $tiddler=schedule $field=yieldings $value={{{ [<new-yield>match<supertitle>then<new-yield>else{schedule!!yieldings}] }}} />
+</$let>
     <$transclude $tiddler={{{ [{!!title}addsuffix[-icon.svg]] }}} />
-   </$button></context-inline>
+
+   </$button></$let></context-inline>
 </$let>
