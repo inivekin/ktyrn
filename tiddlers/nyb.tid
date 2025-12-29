@@ -3,10 +3,10 @@ created: 20250928025415805
 creator: inivekin
 disabled: false
 last-scheduled: false
-modified: 20251229032535051
+modified: 20251229035530362
 modifier: inivekin
 scheduled-max: 4
-scheduled-slots: 2
+scheduled-slots: 1
 tags: context-state
 title: nyb
 type: text/vnd.tiddlywiki
