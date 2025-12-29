@@ -85,25 +85,6 @@ o-arc.textual {
   --o-fill: none !important;
 }
 
-/* .portrait .structure {
-  &.bg { fill: var(--structural-bg); }
-  &.masked { fill: var(--structural-masked); }
-  &.active { fill: var(--structural-active); }
-  &.accent { fill: var(--structural-accent); }
-}
-.portrait .energy {
-  &.bg { fill: var(--energetic-bg); }
-  &.masked { fill: var(--energetic-masked); }
-  &.active { fill: var(--energetic-active); }
-  &.accent { fill: var(--energetic-accent); }
-} 
-.portrait .information {
-  &.bg { fill: var(--informative-bg); }
-  &.masked { fill: var(--informative-masked); }
-  &.active { fill: var(--informative-active); }
-  &.accent { fill: var(--informative-accent); }
-} */
-
 .being.information {
   &.bg { fill: var(--macro-bg); }
   &.masked { fill: var(--macro-masked); }
@@ -143,44 +124,31 @@ button {
       background-color: transparent;
     }
   }
-  &:not([disabled=true]):hover > svg .structure.accent { fill: var(--structural-bg); }
-  &:not([disabled=true]):hover > svg .structure.bg { fill: var(--structural-accent); }
-  & > svg .structure.accent { fill: var(--structural-accent); }
-  & > svg .structure.bg { fill: var(--structural-bg); }
-  & > svg .structure.masked { fill: var(--structural-masked); }
-  & > svg .structure.active { fill: var(--structural-active); }
+  &:not([disabled=true]) scheduler-state[scheduled=true] > svg .structure.accent { fill: var(--structural-bg); }
+  &:not([disabled=true]) scheduler-state[scheduled=true] > svg .structure.bg { fill: var(--structural-accent); }
+  & scheduler-state > svg .structure.accent { fill: var(--structural-accent); }
+  & scheduler-state > svg .structure.bg { fill: var(--structural-bg); }
+  & scheduler-state > svg .structure.masked { fill: var(--structural-masked); }
+  & scheduler-state > svg .structure.active { fill: var(--structural-active); }
 
-  &:not([disabled=true]):hover > svg .information.accent { fill: var(--informative-bg); }
-  &:not([disabled=true]):hover > svg .information.bg { fill: var(--informative-accent); }
-  & > svg .information.accent { fill: var(--informative-accent); }
-  & > svg .information.bg { fill: var(--informative-bg); }
-  & > svg .information.masked { fill: var(--informative-masked); }
-  & > svg .information.active { fill: var(--informative-active); }
+  &:not([disabled=true]) scheduler-state[scheduled=true] > svg .information.accent { fill: var(--informative-bg); }
+  &:not([disabled=true]) scheduler-state[scheduled=true] > svg .information.bg { fill: var(--informative-accent); }
+  & scheduler-state > svg .information.accent { fill: var(--informative-accent); }
+  & scheduler-state > svg .information.bg { fill: var(--informative-bg); }
+  & scheduler-state > svg .information.masked { fill: var(--informative-masked); }
+  & scheduler-state > svg .information.active { fill: var(--informative-active); }
 
-  &:not([disabled=true]):hover > svg .energy.accent { fill: var(--energetic-bg); }
-  &:not([disabled=true]):hover > svg .energy.bg { fill: var(--energetic-accent); }
-  & > svg .energy.accent { fill: var(--energetic-accent); }
-  & > svg .energy.bg { fill: var(--energetic-bg); }
-  & > svg .energy.masked { fill: var(--energetic-masked); }
-  & > svg .energy.active { fill: var(--energetic-active); }
+  &:not([disabled=true]) scheduler-state[scheduled=true] > svg .energy.accent { fill: var(--energetic-bg); }
+  &:not([disabled=true]) scheduler-state[scheduled=true] > svg .energy.bg { fill: var(--energetic-accent); }
+  & scheduler-state > svg .energy.accent { fill: var(--energetic-accent); }
+  & scheduler-state > svg .energy.bg { fill: var(--energetic-bg); }
+  & scheduler-state > svg .energy.masked { fill: var(--energetic-masked); }
+  & scheduler-state > svg .energy.active { fill: var(--energetic-active); }
 
-  &[disabled=true] > svg .masked { fill: var(--macro-masked); }
-  &[disabled=true] > svg .active { fill: var(--macro-active); }
-  &[disabled=true] > svg .accent { fill: var(--macro-accent); }
-  &[disabled=true] > svg .bg { fill: var(--macro-bg); }
-
-  & .scheduler:checked ~ svg .structure.bg { fill: var(--structural-bg); }
-  & .scheduler:checked ~ svg .structure.masked { fill: var(--structural-masked); }
-  & .scheduler:checked ~ svg .structure.active { fill: var(--structural-active); }
-  & .scheduler:checked ~ svg .structure.accent { fill: var(--structural-accent); }
-  & .scheduler:checked ~ svg .information.bg { fill: var(--informative-bg); }
-  & .scheduler:checked ~ svg .information.masked { fill: var(--informative-masked); }
-  & .scheduler:checked ~ svg .information.active { fill: var(--informative-active); }
-  & .scheduler:checked ~ svg .information.accent { fill: var(--informative-accent); }
-  & .scheduler:checked ~ svg .energy.bg { fill: var(--energetic-bg); }
-  & .scheduler:checked ~ svg .energy.masked { fill: var(--energetic-masked); }
-  & .scheduler:checked ~ svg .energy.active { fill: var(--energetic-active); }
-  & .scheduler:checked ~ svg .energy.accent { fill: var(--energetic-accent); }
+  &[disabled=true] scheduler-state > svg .masked { fill: var(--macro-masked); }
+  &[disabled=true] scheduler-state > svg .active { fill: var(--macro-active); }
+  &[disabled=true] scheduler-state > svg .accent { fill: var(--macro-accent); }
+  &[disabled=true] scheduler-state > svg .bg { fill: var(--macro-bg); }
 }
 tr {
   transition: background-color .4s ease;

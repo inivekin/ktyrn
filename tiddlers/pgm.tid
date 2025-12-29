@@ -3,10 +3,11 @@ created: 20250928025449542
 creator: inivekin
 disabled: no
 last-scheduled: false
-modified: 20251229035530361
+modified: 20251229074849070
 modifier: inivekin
+scheduled: false
 scheduled-max: 4
-scheduled-slots: 1
+scheduled-slots: 0
 tags: context-state
 title: pgm
 type: text/vnd.tiddlywiki

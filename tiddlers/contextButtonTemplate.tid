@@ -1,6 +1,6 @@
 created: 20250928021016018
 creator: inivekin
-modified: 20251229035516806
+modified: 20251229074844047
 modifier: inivekin
 tags: 
 title: contextButtonTemplate
@@ -17,9 +17,8 @@ type: text/vnd.tiddlywiki
     </$list><$list filter="[range{!!scheduled-slots}]"><o-arc class=<<arcclass>> > </o-arc>
     </$list><context-inline class=<<inlineclass>> >
 
-<!-- $let last-scheduled={{{ [tag[context-state]last-scheduled[true]] }}} is-disabled={{{ [{schedule!!yieldings}enlist-input[]last[]get[yieldings]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[yes]match[yes]] }}} -->
-<$let last-scheduled={{{ [tag[context-state]last-scheduled[true]] }}} is-disabled={{{ [{schedule!!yieldings}enlist-input[]count[]compare:integer:lt<maximum-yields>then{schedule!!yieldings}enlist-input[]last[]get[yieldings]else[ ]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[yes]match[yes]] }}}>
-<$button disabled=<<is-disabled>> set="$:/state/ink/continue" setTo={{{ [<now "0hhmmssXXX">addsuffix{!!title}] }}} >
+<$let is-disabled={{{ [{schedule!!yieldings}enlist-input[]count[]compare:integer:lt<maximum-yields>then{schedule!!yieldings}enlist-input[]last[]get[yieldings]else[ ]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[yes]match[yes]] }}}>
+<$button disabled=<<is-disabled>> >
     <$let current-context={{{ [{schedule!!yieldings}enlist-input[ ]first[]] }}} next-context={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} existing-value={{{ [{schedule!!yieldings}enlist-input[ ]first[]get[scheduled-slots]] }}} decrement={{{ [{schedule!!yieldings}enlist-input[ ]first[]get[scheduled-slots]subtract[1]max[0]] }}} >
         <$action-setfield $tiddler=<<current-context>> $field=scheduled-slots $value={{{ [<next-context>match<supertitle>then<decrement>else<existing-value>] }}} />
     </$let>
@@ -32,13 +31,16 @@ type: text/vnd.tiddlywiki
         </$list>
     </$let>
 
-<$let new-yield={{{ [{schedule!!yieldings}enlist-input[]append<currentTiddler>format:titlelist[]join[ ]] }}} ><$action-setfield $tiddler=schedule $field=yieldings $value={{{ [{schedule!!yieldings}enlist-input[ ]allbefore:include<currentTiddler>format:titlelist[]join[ ]else<new-yield>] }}} />
+<$let new-yield={{{ [{schedule!!yieldings}enlist-input[]append<currentTiddler>format:titlelist[]join[ ]] }}} scheduling={{{ [{schedule!!yieldings}enlist-input[ ]] }}}>
+<$action-setfield $tiddler=schedule $field=yieldings $value={{{ [{schedule!!yieldings}enlist-input[ ]allbefore:include<currentTiddler>format:titlelist[]join[ ]else<new-yield>] }}} />
 </$let>
-
 <$let new-yield={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} >
     <$action-setfield $tiddler=schedule $field=yieldings $value={{{ [<new-yield>match<supertitle>then<new-yield>else{schedule!!yieldings}] }}} />
 </$let>
+<$let new-yield={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} not-current-context={{{ [tag[context-state]remove<supertitle>] }}} >
+    <scheduler-state scheduled={{{ [{schedule!!yieldings}enlist-input[ ]match<supertitle>then[true]else[false]] }}}>
     <$transclude $tiddler={{{ [{!!title}addsuffix[-icon.svg]] }}} />
-
+    </scheduler-state>
+</$let>
    </$button></$let></context-inline>
 </$let>

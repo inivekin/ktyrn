@@ -3,10 +3,11 @@ created: 20250928013242791
 creator: inivekin
 disabled: false
 last-scheduled: true
-modified: 20251229035303904
+modified: 20251229074849069
 modifier: inivekin
+scheduled: true
 scheduled-max: 4
-scheduled-slots: 1
+scheduled-slots: 0
 tags: context-state
 title: hry
 type: text/vnd.tiddlywiki
