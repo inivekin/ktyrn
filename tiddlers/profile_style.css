@@ -26,6 +26,9 @@ html button {
 .tc-titlebar { font-size: 2em; }
 .tc-subtitle { line-height: 0; display: none; } 
 
+.transparent { color: transparent; }
+.label { color: var(--macro-masked); }
+
 cosmic-microwave-background {
     height: 50vmin;
     width: 100%; /*min(50vh, 100vw);*/
@@ -35,13 +38,23 @@ cosmic-microwave-background {
     bottom: 0;
     right: 0;*/
 }
-context-connector {
-    color: var(--macro-masked);
+o-arc {
+   &[path=false] { --o-fill: var(--macro-masked) };
+   &[path=true] { --o-fill: var(--macro-accent) };
+  transition: --o-fill 1s ease;
+  @starting-style {
+    --o-fill: transparent;
+  }
+}
+o-arc.textual, connector-label, context-connector {
+    & { color: var(--macro-masked) };
+    &[path=true] { color: var(--macro-accent) };
     transition: color 1s ease;
     @starting-style {
       color: transparent;
     }
 }
+
 .transit {
   border-color: var(--macro-masked);
     transition: border-color 1s ease;
@@ -81,7 +94,6 @@ context-connector {
 }
 
 o-arc.textual {
-  color: var(--macro-active);
   --o-fill: none !important;
 }
 
@@ -101,6 +113,21 @@ o-arc.accent {
     &.energy { --o-fill: var(--energetic-accent); }
     &.structure { --o-fill: var(--structural-accent); }
     &.information { --o-fill: var(--informative-accent); }
+}
+o-arc.bg {
+    &.energy { --o-fill: var(--energetic-bg); }
+    &.structure { --o-fill: var(--structural-bg); }
+    &.information { --o-fill: var(--informative-bg); }
+}
+o-arc.active {
+    &.energy { --o-fill: var(--energetic-active); }
+    &.structure { --o-fill: var(--structural-active); }
+    &.information { --o-fill: var(--informative-active); }
+}
+o-arc.masked {
+    &.energy { --o-fill: var(--energetic-masked); }
+    &.structure { --o-fill: var(--structural-masked); }
+    &.information { --o-fill: var(--informative-masked); }
 }
 
 o-arc.inactive {
