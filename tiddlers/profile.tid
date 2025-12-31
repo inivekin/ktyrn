@@ -1,6 +1,6 @@
 created: 20250921012308617
 creator: inivekin
-modified: 20251229122356724
+modified: 20251231223223626
 modifier: inivekin
 title: profile
 type: text/vnd.tiddlywiki
@@ -47,7 +47,7 @@ type: text/vnd.tiddlywiki
                                     <context-connector path={{{ [{schedule!!yieldings}regexp[imu\shry|hry\simu]then[true]else[false]] }}} class="vector inner-orbit grow-2.5x angle-45"></context-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp[imu\sexo|exo\simu]then[true]else[false]] }}} class="vector inner-orbit grow-2.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp[imu\sexo|exo\simu]then[true]else[false]] }}} class="capsule">control<br>filter</connector-label></context-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp[imu\scbm|cbm\simu]then[true]else[false]] }}} class="vector inner-orbit grow-2.5x angle-225"></context-connector>
-                                    <context-connector path={{{ [{schedule!!yieldings}regexp[imu\snyb|imu\snyb]then[true]else[false]] }}} class="vector inner-orbit grow-2.5x angle-315"></context-connector>
+                                    <context-connector path={{{ [{schedule!!yieldings}regexp[imu\snyb|nyb\simu]then[true]else[false]] }}} class="vector inner-orbit grow-2.5x angle-315"></context-connector>
                                     <context-orbit class="satellite angle-45 structural"><context-focus class="gravity-spot">{{hry||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
                                     <context-connector path={{{ [{schedule!!yieldings}regexp[hry\spgm|pgm\shry]then[true]else[false]] }}} class="vector grow-1.5x angle-270"></context-connector>
                                           {{hry||contextButtonTemplate}}

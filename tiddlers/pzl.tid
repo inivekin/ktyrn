@@ -3,11 +3,11 @@ created: 20250928025532366
 creator: inivekin
 disabled: false
 last-scheduled: false
-modified: 20251229123926235
+modified: 20251231231741597
 modifier: inivekin
 scheduled: false
 scheduled-max: 4
-scheduled-slots: 3
+scheduled-slots: 2
 tags: context-state
 title: pzl
 type: text/vnd.tiddlywiki
