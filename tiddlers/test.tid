@@ -1,6 +1,6 @@
 created: 20250928011720388
 creator: inivekin
-modified: 20251229055747723
+modified: 20260103032704143
 modifier: inivekin
 tags: 
 title: test
@@ -19,3 +19,7 @@ type: text/vnd.tiddlywiki
     <$list filter="[range[5]]">
         <<currentTiddler>>
     </$list>
+
+
+{{{ [{schedule!!yieldings}enlist-input[]] }}}
+{{{ [{schedule!!yieldings}enlist-input[]] :intersection[enlist[imu cbm]] +[count[]] }}}
