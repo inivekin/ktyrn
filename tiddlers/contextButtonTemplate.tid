@@ -1,6 +1,6 @@
 created: 20250928021016018
 creator: inivekin
-modified: 20260104002255117
+modified: 20260104004908923
 modifier: inivekin
 tags: 
 title: contextButtonTemplate
@@ -12,11 +12,11 @@ type: text/vnd.tiddlywiki
           arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
           inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}
           maximum-yields={{{ [{schedule!!yieldings}enlist-input[]first[]get[scheduled-slots]add[1]] }}}
-          is-disabled={{{ [{schedule!!yieldings}enlist-input[]count[]compare:integer:lt<maximum-yields>then{schedule!!yieldings}enlist-input[]last[]get[yieldings]else[ ]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[true]match[true]else[false]] }}}
+          is-disabled={{{ [{schedule!!yieldings}enlist-input[]count[]compare:integer:lt<maximum-yields>then{schedule!!yieldings}enlist-input[]last[]get[yieldings]else[ ]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[yes]match[yes]] }}}
           >
     <$list filter="[range<inactive>]">
-        <o-arc class=<<arcclass_inactive>> disabled=<<is-disabled>> > </o-arc>
-    </$list><$list filter="[range{!!scheduled-slots}]"><o-arc class=<<arcclass>> disabled=<<is-disabled>> > </o-arc>
+        <o-arc class=<<arcclass_inactive>> disabled={{{ [<is-disabled>match[yes]then[true]else[false]] }}} > </o-arc>
+    </$list><$list filter="[range{!!scheduled-slots}]"><o-arc class=<<arcclass>> disabled={{{ [<is-disabled>match[yes]then[true]else[false]] }}} > </o-arc>
     </$list><context-inline class=<<inlineclass>> >
 
 <$button disabled=<<is-disabled>> >

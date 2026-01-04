@@ -1,8 +1,10 @@
 created: 20251228094744163
-modified: 20260104003220089
+interrupts: pgm pzl
+loggers: 
+modified: 20260104004952671
 tags: 
 title: schedule
 type: text/vnd.tiddlywiki
-yieldings: cbm
+yieldings: 
 
 {{!!yieldings}}

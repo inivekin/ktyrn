@@ -3,7 +3,7 @@ created: 20250928025449542
 creator: inivekin
 disabled: no
 last-scheduled: false
-modified: 20260104002623330
+modified: 20260104004939179
 modifier: inivekin
 scheduled: false
 scheduled-max: 4
@@ -11,4 +11,4 @@ scheduled-slots: 0
 tags: context-state
 title: pgm
 type: text/vnd.tiddlywiki
-yieldings: pzl hry nyb imu lut
+yieldings: pzl hry nyb cbm lut

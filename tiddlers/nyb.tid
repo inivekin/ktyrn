@@ -3,7 +3,7 @@ created: 20250928025415805
 creator: inivekin
 disabled: false
 last-scheduled: false
-modified: 20260104002335110
+modified: 20260104004527289
 modifier: inivekin
 scheduled: false
 scheduled-max: 4
@@ -11,4 +11,4 @@ scheduled-slots: 1
 tags: context-state
 title: nyb
 type: text/vnd.tiddlywiki
-yieldings: lut pgm ant imu
+yieldings: lut pgm ant cbm

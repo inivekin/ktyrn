@@ -1,6 +1,6 @@
 created: 20250921012308617
 creator: inivekin
-modified: 20260103232935249
+modified: 20260104004655740
 modifier: inivekin
 title: profile
 type: text/vnd.tiddlywiki
@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
         <profile-focus class="gravity-spot">
                     <profile-outline class="orbit-11"><profile-inline class="capsule">{{profile-icon.svg}}</profile-inline></profile-outline>
 
-                    <audio-visual class="orbit-4"><context-connector class="transparent vector inner-orbit grow-4.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex imu nyb>then[true]else<.partial-path imu nyb>] }}} class="label capsule">sensorium<br>aggregate</connector-label></context-connector></audio-visual>
+                    <audio-visual class="orbit-4"><context-connector class="transparent vector inner-orbit grow-4.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex cbm nyb>then[true]else<.partial-path cbm nyb>] }}} class="label capsule">sensorium<br>aggregate</connector-label></context-connector></audio-visual>
 
                     <energetic-orbit class="orbit-10 transit">
                         <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex pgm pzl>then[true]else<.partial-path pgm pzl>] }}} class="vector inner-orbit grow-3x angle-45"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex pgm pzl>then[true]else<.partial-path pgm pzl>] }}} class="capsule">reflex<br>impulse</connector-label></context-connector>
@@ -38,10 +38,10 @@ type: text/vnd.tiddlywiki
                                     <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex lut pgm>then[true]else<.partial-path lut pgm>] }}} class="shrink-95 angle-315"></o-arc>
                                 </informative-paths>
                                 <informative-paths class="orbit-4 range-40">
-                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex imu pgm>then[true]else<.partial-path imu pgm>] }}} class="shrink-95 angle-90"></o-arc>
+                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex cbm pgm>then[true]else<.partial-path cbm pgm>] }}} class="shrink-95 angle-90"></o-arc>
                                 </informative-paths>
                                 <informative-paths class="orbit-4 range-50">
-                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex imu ant>then[true]else<.partial-path imu ant>] }}} class="shrink-95 angle-130"></o-arc>
+                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex cbm ant>then[true]else<.partial-path cbm ant>] }}} class="shrink-95 angle-130"></o-arc>
                                 </informative-paths>
                                 <informative-paths class="orbit-4 range-125">
                                     <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex lut ant>then[true]else<.partial-path lut ant>] }}} class="shrink-95 angle-180"></o-arc>
@@ -51,12 +51,12 @@ type: text/vnd.tiddlywiki
                                 <structural-outline class="orbit-5">
                                     <placeholder-connector class="transparent side"></placeholder-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex hry exo>then[true]else<.partial-path hry exo>] }}} class="side"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex hry exo>then[true]else<.partial-path hry exo>] }}} class="capsule flip">interface</connector-label></context-connector>
-                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex cbm exo>then[true]else<.partial-path cbm exo>] }}} class="side"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex cbm exo>then[true]else<.partial-path cbm exo>] }}} class="capsule">shielding</connector-label></context-connector>
+                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="side"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="capsule">shielding</connector-label></context-connector>
                                     <placeholder-connector class="side"></placeholder-connector>
-                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu hry>then[true]else<.partial-path imu hry>] }}} class="vector inner-orbit grow-2.5x angle-45"></context-connector>
-                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="vector inner-orbit grow-2.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="capsule">control<br>filter</connector-label></context-connector>
+                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex cbm hry>then[true]else<.partial-path cbm hry>] }}} class="vector inner-orbit grow-2.5x angle-45"></context-connector>
+                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex cbm exo>then[true]else<.partial-path cbm exo>] }}} class="vector inner-orbit grow-2.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex cbm exo>then[true]else<.partial-path cbm exo>] }}} class="capsule">control<br>filter</connector-label></context-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu cbm>then[true]else<.partial-path imu cbm>] }}} class="vector inner-orbit grow-2.5x angle-225"></context-connector>
-                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu nyb>then[true]else<.partial-path imu nyb>] }}} class="vector inner-orbit grow-2.5x angle-315"></context-connector>
+                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex cbm nyb>then[true]else<.partial-path cbm nyb>] }}} class="vector inner-orbit grow-2.5x angle-315"></context-connector>
                                     <context-orbit class="satellite angle-45 structural"><context-focus class="gravity-spot">{{hry||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex hry pgm>then[true]else<.partial-path hry pgm>] }}} class="vector grow-1.5x angle-270"></context-connector>
                                           {{hry||contextButtonTemplate}}
@@ -64,17 +64,17 @@ type: text/vnd.tiddlywiki
                                     <context-orbit class="satellite angle-135 structural"><context-focus class="gravity-spot">{{exo||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
                                           {{exo||contextButtonTemplate}}
                                     </context-outline></context-focus></context-orbit>
-                                    <context-orbit class="satellite angle-225 structural"><context-focus class="gravity-spot"><connector-orbit class="orbit-2"><context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex cbm ant>then[true]else<.partial-path cbm ant>] }}} class="vector inner-orbit grow-1x angle-0"></context-connector></connector-orbit>{{cbm||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
-                                          {{cbm||contextButtonTemplate}}
+                                    <context-orbit class="satellite angle-225 structural"><context-focus class="gravity-spot"><connector-orbit class="orbit-2"><context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu ant>then[true]else<.partial-path imu ant>] }}} class="vector inner-orbit grow-1x angle-0"></context-connector></connector-orbit>{{imu||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
+                                          {{imu||contextButtonTemplate}}
                                     </context-outline></context-focus></context-orbit>
                                           
                                     <context-orbit class="satellite angle-315 informative"><context-focus class="gravity-spot"><connector-orbit class="orbit-2"><context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex nyb pgm>then[true]else<.partial-path nyb pgm>] }}} class="vector grow-2.5x angle-90"></context-connector><context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex nyb ant>then[true]else<.partial-path nyb ant>] }}} class="vector grow-2.5x angle-180"></context-connector><context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex nyb lut>then[true]else<.partial-path nyb lut>] }}} class="vector grow-2x angle-315"></context-connector></connector-orbit>{{nyb||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
                                           {{nyb||contextButtonTemplate}}
                                     </context-outline></context-focus></context-orbit>
                                 </structural-outline>
-                                {{imu||contextYieldHighlightTemplate}}
+                                {{cbm||contextYieldHighlightTemplate}}
                                 <context-outline class="orbit-1">
-                                          {{imu||contextButtonTemplate}}
+                                          {{cbm||contextButtonTemplate}}
                                 </context-outline>
                         </structural-focus></structural-orbit>
                         <informative-orbit class="satellite angle-315"><informative-focus class="gravity-spot">
