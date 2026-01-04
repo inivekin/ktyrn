@@ -1,10 +1,23 @@
 created: 20250928011720388
 creator: inivekin
-modified: 20260103032704143
+modified: 20260104020545009
 modifier: inivekin
 tags: 
 title: test
 type: text/vnd.tiddlywiki
+
+<$button>
+    reset all
+
+      <$action-setfield $tiddler=schedule $field=yieldings $value="" />
+      <$action-setfield $tiddler=schedule $field=interrupts $value="qnt lut nyb cbm exo rfx bty pzl pgm hry ant imu" />
+      <$action-setfield $tiddler=schedule $field=loggers $value="" />
+
+    <$list filter="[tag[context-state]]">
+      <$action-setfield $field=scheduled-max $value=4 />
+      <$action-setfield $field=scheduled-slots $value=1 />
+    </$list>
+</$button>
 
     <$list filter="[tag[context-state]]">
   <$button>

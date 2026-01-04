@@ -3,11 +3,11 @@ created: 20250928025432467
 creator: inivekin
 disabled: false
 last-scheduled: false
-modified: 20260104012357573
+modified: 20260104113715403
 modifier: inivekin
 scheduled: false
 scheduled-max: 4
-scheduled-slots: 0
+scheduled-slots: 1
 tags: context-state
 title: lut
 type: text/vnd.tiddlywiki

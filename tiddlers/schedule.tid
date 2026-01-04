@@ -1,14 +1,15 @@
 created: 20251228094744163
-interrupts: 
-loggers: 
-modified: 20260104012424339
+interrupts: qnt lut nyb cbm exo rfx bty pzl pgm hry ant imu
+loggers: bty lut
+modified: 20260104113715408
 tags: 
 title: schedule
 type: text/vnd.tiddlywiki
-yieldings: 
+yieldings: qnt
 
 <%if [{!!yieldings}enlist-input[]] %>
 yields: {{!!yieldings}}
 <%else%>
 interrupts: {{!!interrupts}}
 <%endif%>
+loggers: {{!!loggers}}

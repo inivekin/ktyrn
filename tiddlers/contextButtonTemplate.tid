@@ -1,6 +1,6 @@
 created: 20250928021016018
 creator: inivekin
-modified: 20260104012211854
+modified: 20260104113620698
 modifier: inivekin
 tags: 
 title: contextButtonTemplate
@@ -11,8 +11,8 @@ type: text/vnd.tiddlywiki
 
 <$let supertitle={{!!title}} 
           inlineclass={{{ [{!!context-axis}addsuffix[ capsule icon ]addsuffix{!!title}] }}} 
-          arcclass={{{ [{!!context-axis}addsuffix[ scheduled masked gap-7 outer-orbit shrink-90]] }}}
-          arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
+          arcclass={{{ [{!!context-axis}addsuffix[ scheduled accent gap-7 outer-orbit shrink-80]] }}}
+          arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-80]] }}}
           inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}
           maximum-yields={{{ [{schedule!!yieldings}enlist-input[]first[]get[scheduled-slots]add[1]] }}}
           is-disabled={{{ [{schedule!!yieldings}enlist-input[]count[]compare:integer:lt<maximum-yields>then{schedule!!yieldings}enlist-input[]last[]get[yieldings]else[ ]addsuffix[ ]addsuffix{schedule!!yieldings}enlist-input[ ]match{!!title}else[yes]match[yes]] }}}
