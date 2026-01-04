@@ -1,6 +1,6 @@
 created: 20250921012308617
 creator: inivekin
-modified: 20260103050606069
+modified: 20260103232935249
 modifier: inivekin
 title: profile
 type: text/vnd.tiddlywiki
@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 \function currently-scheduled(in) [{schedule!!yieldings}enlist-input[]count[]]
 \function in-next-yielding(in) [<allowed-to-schedule>subtract<currently-scheduled>compare:number:gteq[0]then{schedule!!yieldings}enlist-input[]last[]]
 
-\function .partial-path(ctx1, ctx2) [<ctx1>append<ctx2>match<in-next-yielding>get[yieldings]enlist-input[]] :intersection[<ctx1>append<ctx2>] +[get[context-axis]]
+\function .partial-path(ctx1, ctx2) [<ctx1>append<ctx2>match<in-next-yielding>get[yieldings]enlist-input[]] :intersection[<ctx1>append<ctx2>] :except[{schedule!!yieldings}enlist-input[]] +[get[context-axis]]
 
         <cosmic-microwave-background> <universal-scheduler class="bigbang at-bottom">
         <profile-align class="gravity-spot"><profile-offset class="orbit-11"><profile-orbit class="satellite angle-0">
@@ -54,7 +54,7 @@ type: text/vnd.tiddlywiki
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex cbm exo>then[true]else<.partial-path cbm exo>] }}} class="side"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex cbm exo>then[true]else<.partial-path cbm exo>] }}} class="capsule">shielding</connector-label></context-connector>
                                     <placeholder-connector class="side"></placeholder-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu hry>then[true]else<.partial-path imu hry>] }}} class="vector inner-orbit grow-2.5x angle-45"></context-connector>
-                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="vector inner-orbit grow-2.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>.t-f[]] }}} class="capsule">control<br>filter</connector-label></context-connector>
+                                    <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="vector inner-orbit grow-2.5x angle-135"><connector-label path={{{ [{schedule!!yieldings}regexp<yield-regex imu exo>then[true]else<.partial-path imu exo>] }}} class="capsule">control<br>filter</connector-label></context-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu cbm>then[true]else<.partial-path imu cbm>] }}} class="vector inner-orbit grow-2.5x angle-225"></context-connector>
                                     <context-connector path={{{ [{schedule!!yieldings}regexp<yield-regex imu nyb>then[true]else<.partial-path imu nyb>] }}} class="vector inner-orbit grow-2.5x angle-315"></context-connector>
                                     <context-orbit class="satellite angle-45 structural"><context-focus class="gravity-spot">{{hry||contextYieldHighlightTemplate}}<context-outline class="orbit-1">
@@ -79,9 +79,9 @@ type: text/vnd.tiddlywiki
                         </structural-focus></structural-orbit>
                         <informative-orbit class="satellite angle-315"><informative-focus class="gravity-spot">
                                 <informative-labels class="orbit-4">
-                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex lut pgm>then[true]else<.partial-path lut pgm>] }}}class="textual outer-orbit shrink-50 angle-315">pattern recognition</o-arc>
+                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex lut pgm>then[true]else<.partial-path lut pgm>] }}} class="textual outer-orbit shrink-50 angle-315">pattern recognition</o-arc>
                                     <o-arc class="textual"></o-arc>
-                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex lut ant>then[true]else<.partial-path lut ant>] }}}class="textual inner-orbit grow-0.2x angle-190">auto-response</o-arc>
+                                    <o-arc path={{{ [{schedule!!yieldings}regexp<yield-regex lut ant>then[true]else<.partial-path lut ant>] }}} class="textual inner-orbit grow-0.2x angle-190">auto-response</o-arc>
                                 </informative-labels>
                                 <informative-outline class="orbit-4">
                                     <context-orbit class="satellite angle-80 informative"><context-focus class="gravity-spot">{{pgm||contextYieldHighlightTemplate}}<context-outline class="orbit-1">

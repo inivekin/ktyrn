@@ -126,7 +126,7 @@ o-arc.textual, connector-label, context-connector {
     &.active { fill: var(--informative-active); }
     &.accent { fill: var(--informative-accent); }
   }
-  &:hover  * profile-outline {
+  &:hover * profile-outline {
     & .masked { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
     & .active { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
     & .accent { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
@@ -161,7 +161,6 @@ button {
   fill: transparent;
 
   &:not([disabled=true]) scheduler-state:hover > svg {
-    transition: fill 1s ease;
     & .structure.accent { fill: var(--structural-accent); }
     & .structure.bg { fill: var(--structural-bg); }
     & .structure.masked { fill: var(--structural-masked); }
@@ -208,10 +207,8 @@ button {
   &[disabled=true] scheduler-state > svg {
     & .masked, .active, .accent, .bg { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
   }
-  /*&[disabled=true] scheduler-state > svg {
-    & .masked { fill: var(--macro-masked); }
-    & .active { fill: var(--macro-active); }
-    & .accent { fill: var(--macro-accent); }
-    & .bg { fill: var(--macro-bg); }
-  }*/
+  transition: fill 1s ease;
+  @starting-style {
+    fill: transparent;
+  }
 }
