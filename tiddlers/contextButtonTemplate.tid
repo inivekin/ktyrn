@@ -1,14 +1,17 @@
 created: 20250928021016018
 creator: inivekin
-modified: 20260104004908923
+modified: 20260104012211854
 modifier: inivekin
 tags: 
 title: contextButtonTemplate
 type: text/vnd.tiddlywiki
 
+<%if [{schedule!!yieldings}enlist-input[]] %>
+<!-- if in a scheduling state -->
+
 <$let supertitle={{!!title}} 
           inlineclass={{{ [{!!context-axis}addsuffix[ capsule icon ]addsuffix{!!title}] }}} 
-          arcclass={{{ [{!!context-axis}addsuffix[ scheduled accent gap-7 outer-orbit shrink-90]] }}}
+          arcclass={{{ [{!!context-axis}addsuffix[ scheduled masked gap-7 outer-orbit shrink-90]] }}}
           arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
           inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}
           maximum-yields={{{ [{schedule!!yieldings}enlist-input[]first[]get[scheduled-slots]add[1]] }}}
@@ -45,3 +48,29 @@ type: text/vnd.tiddlywiki
 </$let>
    </$button></context-inline>
 </$let>
+
+<%else%>
+<!-- if in an interrupt state -->
+
+<$let supertitle={{!!title}} 
+          inlineclass={{{ [{!!context-axis}addsuffix[ capsule icon ]addsuffix{!!title}] }}} 
+          arcclass={{{ [{!!context-axis}addsuffix[ scheduled accent gap-7 outer-orbit shrink-90]] }}}
+          arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
+          inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}
+          maximum-yields={{{ [{schedule!!yieldings}enlist-input[]first[]get[scheduled-slots]add[1]] }}}
+          is-disabled={{{ [{schedule!!interrupts}enlist-input[]match<supertitle>else[yes]match[yes]] }}}
+          >
+    <$list filter="[range<inactive>]">
+        <o-arc class=<<arcclass_inactive>> disabled={{{ [<is-disabled>match[yes]then[true]else[false]] }}} > </o-arc>
+    </$list><$list filter="[range{!!scheduled-slots}]"><o-arc class=<<arcclass>> disabled={{{ [<is-disabled>match[yes]then[true]else[false]] }}} > </o-arc>
+    </$list><context-inline class=<<inlineclass>> >
+
+<$button disabled=<<is-disabled>> >
+    <$action-setfield $tiddler=schedule $field=yieldings $value=<<supertitle>> />
+    <scheduler-state scheduled={{{ [{schedule!!yieldings}enlist-input[ ]match<supertitle>then[true]else[false]] }}}>
+    <$transclude $tiddler={{{ [{!!title}addsuffix[-icon.svg]] }}} />
+    </scheduler-state>
+   </$button></context-inline>
+</$let>
+
+<%endif%>

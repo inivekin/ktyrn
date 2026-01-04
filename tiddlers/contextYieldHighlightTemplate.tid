@@ -1,11 +1,11 @@
 created: 20251229120542598
-modified: 20251229123854512
+modified: 20260104012305909
 tags: 
 title: contextYieldHighlightTemplate
 type: text/vnd.tiddlywiki
 
-<$list filter="[{schedule!!yieldings}enlist-input[ ]last[]match<currentTiddler>]">
+<$list filter="[{schedule!!loggers}enlist-input[ ]match<currentTiddler>]">
 <scheduled-yield class="orbit-1">
-<o-arc class={{{ [{!!context-axis}addsuffix[ shrink-70 inner-orbit active]] }}}></o-arc>
+<o-arc class={{{ [{!!context-axis}addsuffix[ shrink-70 inner-orbit accent]] }}}></o-arc>
 </scheduled-yield>
 </$list>

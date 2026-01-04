@@ -1,10 +1,14 @@
 created: 20251228094744163
-interrupts: pgm pzl
+interrupts: 
 loggers: 
-modified: 20260104004952671
+modified: 20260104012424339
 tags: 
 title: schedule
 type: text/vnd.tiddlywiki
 yieldings: 
 
-{{!!yieldings}}
+<%if [{!!yieldings}enlist-input[]] %>
+yields: {{!!yieldings}}
+<%else%>
+interrupts: {{!!interrupts}}
+<%endif%>
