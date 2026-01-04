@@ -45,34 +45,32 @@ o-arc {
    &[path=structure] { --o-fill: var(--structural-accent) };
    &[path=true] { --o-fill: var(--macro-accent) };
 
-  &.accent {
-    transition: --o-fill 1s ease;
+  &:not([disabled=true]).accent {
     &.energy { --o-fill: var(--energetic-accent); }
     &.structure { --o-fill: var(--structural-accent); }
     &.information { --o-fill: var(--informative-accent); }
   }
-  &.bg {
-    transition: --o-fill 1s ease;
+  &:not([disabled=true]).bg {
     &.energy { --o-fill: var(--energetic-bg); }
     &.structure { --o-fill: var(--structural-bg); }
     &.information { --o-fill: var(--informative-bg); }
   }
-  &.active {
-    transition: --o-fill 1s ease;
+  &:not([disabled=true]).active {
     &.energy { --o-fill: var(--energetic-active); }
     &.structure { --o-fill: var(--structural-active); }
     &.information { --o-fill: var(--informative-active); }
   }
-  &.masked {
-    transition: --o-fill 1s ease;
+  &:not([disabled=true]).masked {
     &.energy { --o-fill: var(--energetic-masked); }
     &.structure { --o-fill: var(--structural-masked); }
     &.information { --o-fill: var(--informative-masked); }
   }
   &.inactive {
     --o-fill: transparent;
+    stroke-width: 1px;
   }
 
+  transition: --o-fill 1s ease;
   @starting-style {
     --o-fill: transparent;
   }
@@ -207,8 +205,10 @@ button {
   &[disabled=true] scheduler-state > svg {
     & .masked, .active, .accent, .bg { fill: var(--macro-bg); stroke: var(--macro-masked); stroke-width: 1px; }
   }
-  transition: fill 1s ease;
-  @starting-style {
-    fill: transparent;
+  & * svg path {
+    transition: fill 0.6s ease;
+    @starting-style {
+      fill: transparent;
+    }
   }
 }
