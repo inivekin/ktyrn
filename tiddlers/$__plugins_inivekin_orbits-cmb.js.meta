@@ -3,7 +3,7 @@ creator: inivekin
 exports.after: ["rootwidget"]
 exports.platforms: ["browser"]
 exports.synchronous: true
-modified: 20251207074923448
+modified: 20260111013517287
 modifier: inivekin
 module-type: macro
 tags: 

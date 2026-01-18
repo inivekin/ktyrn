@@ -1,6 +1,6 @@
 created: 20250928011720388
 creator: inivekin
-modified: 20260104020545009
+modified: 20260118103918681
 modifier: inivekin
 tags: 
 title: test
@@ -10,8 +10,12 @@ type: text/vnd.tiddlywiki
     reset all
 
       <$action-setfield $tiddler=schedule $field=yieldings $value="" />
-      <$action-setfield $tiddler=schedule $field=interrupts $value="qnt lut nyb cbm exo rfx bty pzl pgm hry ant imu" />
+      <$action-setfield $tiddler=schedule $field=instruction $value="interrupt/opener" />
       <$action-setfield $tiddler=schedule $field=loggers $value="" />
+      <$action-setfield $tiddler=schedule $field=program-counter $value=0 />
+    <$list filter="[tag[log]]">
+            <$action-setfield $field=executed $value="" />
+    </$list>
 
     <$list filter="[tag[context-state]]">
       <$action-setfield $field=scheduled-max $value=4 />
@@ -28,11 +32,3 @@ type: text/vnd.tiddlywiki
     <$action-setfield $field=scheduled-slots $value=0 />
 </$button>
     </$list>
-
-    <$list filter="[range[5]]">
-        <<currentTiddler>>
-    </$list>
-
-
-{{{ [{schedule!!yieldings}enlist-input[]] }}}
-{{{ [{schedule!!yieldings}enlist-input[]] :intersection[enlist[imu cbm]] +[count[]] }}}

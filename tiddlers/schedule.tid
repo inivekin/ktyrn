@@ -1,15 +1,26 @@
 created: 20251228094744163
+instruction: interrupt/opener
 interrupts: qnt lut nyb cbm exo rfx bty pzl pgm hry ant imu
-loggers: bty lut
-modified: 20260104113715408
+loggers: 
+modified: 20260118104344333
+program-counter: 0
 tags: 
 title: schedule
 type: text/vnd.tiddlywiki
-yieldings: qnt
+yieldings: 
 
 <%if [{!!yieldings}enlist-input[]] %>
+
 yields: {{!!yieldings}}
+
+next-idle: {{{ [{schedule!!instruction}get[idle-yield]] }}}
+
+potential-logs:  {{{ [{schedule!!instruction}fields[]] :intersection[tag[context-state]] }}} 
+
 <%else%>
-interrupts: {{!!interrupts}}
+interrupts:
+<$list filter='[{!!instruction}fields[]] :intersection[tag[context-state]]'>
+
+</$list>
 <%endif%>
 loggers: {{!!loggers}}

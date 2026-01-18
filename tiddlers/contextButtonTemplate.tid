@@ -1,6 +1,6 @@
 created: 20250928021016018
 creator: inivekin
-modified: 20260104113620698
+modified: 20260118080736980
 modifier: inivekin
 tags: 
 title: contextButtonTemplate
@@ -34,12 +34,19 @@ type: text/vnd.tiddlywiki
             </$let>
         </$list>
     </$let>
+    
 
 <$let new-yield={{{ [{schedule!!yieldings}enlist-input[]append<currentTiddler>format:titlelist[]join[ ]] }}} scheduling={{{ [{schedule!!yieldings}enlist-input[ ]] }}}>
 <$action-setfield $tiddler=schedule $field=yieldings $value={{{ [{schedule!!yieldings}enlist-input[ ]allbefore:include<currentTiddler>format:titlelist[]join[ ]else<new-yield>] }}} />
 </$let>
-<$let new-yield={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} >
+<$let new-yield={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} next-program-count={{{ [{schedule!!program-counter}add[1]] }}} default-yield-instruction={{{ [{schedule!!instruction}get[idle-yield]] }}} next-instruction={{{ [{schedule!!instruction}get<supertitle>else<default-yield-instruction>] }}} pre-existing-executed={{{ [{schedule!!instruction}get[executed]] }}} >
     <$action-setfield $tiddler=schedule $field=yieldings $value={{{ [<new-yield>match<supertitle>then<new-yield>else{schedule!!yieldings}] }}} />
+
+    <!-- instruction incrementing -->
+        <$action-setfield $tiddler={{schedule!!instruction}} $field=executed $value={{{ [<new-yield>match<supertitle>then{schedule!!program-counter}else<pre-existing-executed>] }}} />
+    <$action-setfield $tiddler=schedule $field=program-counter $value={{{ [<new-yield>match<supertitle>then<next-program-count>else{schedule!!program-counter}] }}} />
+        <$action-setfield $tiddler=schedule $field=instruction $value={{{ [<new-yield>match<supertitle>then<next-instruction>else{schedule!!instruction}] }}} />
+
 </$let>
 <$let new-yield={{{ [{schedule!!yieldings}enlist-input[ ]last[]] }}} not-current-context={{{ [tag[context-state]remove<supertitle>] }}} >
     <scheduler-state scheduled={{{ [{schedule!!yieldings}enlist-input[ ]match<supertitle>then[true]else[false]] }}}>
@@ -58,7 +65,7 @@ type: text/vnd.tiddlywiki
           arcclass_inactive={{{ [{!!context-axis}addsuffix[ scheduled inactive gap-7 outer-orbit shrink-90]] }}}
           inactive={{{ [{!!scheduled-max}subtract{!!scheduled-slots}] }}}
           maximum-yields={{{ [{schedule!!yieldings}enlist-input[]first[]get[scheduled-slots]add[1]] }}}
-          is-disabled={{{ [{schedule!!interrupts}enlist-input[]match<supertitle>else[yes]match[yes]] }}}
+          is-disabled={{{ [{schedule!!instruction}fields[]] :intersection[tag[context-state]] +[match<supertitle>else[yes]match[yes]] }}}
           >
     <$list filter="[range<inactive>]">
         <o-arc class=<<arcclass_inactive>> disabled={{{ [<is-disabled>match[yes]then[true]else[false]] }}} > </o-arc>
@@ -67,6 +74,11 @@ type: text/vnd.tiddlywiki
 
 <$button disabled=<<is-disabled>> >
     <$action-setfield $tiddler=schedule $field=yieldings $value=<<supertitle>> />
+
+    <$action-setfield $tiddler={{schedule!!instruction}} $field=executed $value={{schedule!!program-counter}} />
+    <$action-setfield $tiddler=schedule $field=instruction $value={{{ [{schedule!!instruction}get<supertitle>] }}} />
+    <$action-setfield $tiddler=schedule $field=program-counter $value={{{ [{schedule!!program-counter}add[1]] }}} />
+
     <scheduler-state scheduled={{{ [{schedule!!yieldings}enlist-input[ ]match<supertitle>then[true]else[false]] }}}>
     <$transclude $tiddler={{{ [{!!title}addsuffix[-icon.svg]] }}} />
     </scheduler-state>

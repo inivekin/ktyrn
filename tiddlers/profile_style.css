@@ -38,12 +38,13 @@ cosmic-microwave-background {
     bottom: 0;
     right: 0;*/
 }
+
 o-arc {
-   & { --o-fill: var(--macro-masked) };
-   &[path=information] { --o-fill: var(--informative-accent) };
-   &[path=energy] { --o-fill: var(--energetic-accent) };
-   &[path=structure] { --o-fill: var(--structural-accent) };
-   &[path=true] { --o-fill: var(--macro-accent) };
+  & { --o-fill: var(--macro-masked) };
+  &[path=information] { --o-fill: var(--informative-accent) };
+  &[path=energy] { --o-fill: var(--energetic-accent) };
+  &[path=structure] { --o-fill: var(--structural-accent) };
+  &[path=true] { --o-fill: var(--macro-accent) };
 
   &:not([disabled=true]).accent {
     &.energy { --o-fill: var(--energetic-accent); }
@@ -69,10 +70,11 @@ o-arc {
     --o-fill: transparent;
     stroke-width: 1px;
   }
-
-  transition: --o-fill 1s ease;
-  @starting-style {
-    --o-fill: transparent;
+  & {
+    transition: --o-fill 1s ease;
+    @starting-style {
+      --o-fill: transparent;
+    }
   }
 }
 
@@ -82,7 +84,7 @@ o-arc.textual, connector-label, context-connector {
     &[path=energy] { color: var(--energetic-accent) };
     &[path=structure] { color: var(--structural-accent) };
     &[path=true] { color: var(--macro-accent) };
-    transition: color 1s ease;
+    transition: fill 1s ease;
     @starting-style {
       color: transparent;
     }
@@ -137,16 +139,31 @@ o-arc.textual {
   --o-fill: none !important;
 }
 
-.being.information {
-  &.bg { fill: var(--macro-bg); }
-  &.masked { fill: var(--macro-masked); }
-  &.active { fill: var(--macro-active); }
-  &.accent { fill: var(--macro-accent); }
-
-  &:hover .bg { fill: var(--informative-bg); }
-  &:hover .masked { fill: var(--informative-masked); }
-  &:hover .active { fill: var(--informative-active); }
-  &:hover .accent { fill: var(--informative-accent); }
+.generic {
+  &.structure {
+    &.bg { background-color: var(--structural-bg); }
+    &.masked { background-color: var(--structural-masked); }
+    &.active { background-color: var(--structural-active); }
+    &.accent { background-color: var(--structural-accent); }
+  }
+  &.energy {
+    &.bg { background-color: var(--energetic-bg); }
+    &.masked { background-color: var(--energetic-masked); }
+    &.active { background-color: var(--energetic-active); }
+    &.accent { background-color: var(--energetic-accent); }
+  }
+  &.information {
+    &.bg { background-color: var(--informative-bg); }
+    &.masked { background-color: var(--informative-masked); }
+    &.active { background-color: var(--informative-active); }
+    &.accent { background-color: var(--informative-accent); }
+  }
+  &.macro {
+    &.bg { background-color: var(--macro-bg); }
+    &.masked { background-color: var(--macro-masked); }
+    &.active { background-color: var(--macro-active); }
+    &.accent { background-color: var(--macro-accent); }
+  }
 }
 
 

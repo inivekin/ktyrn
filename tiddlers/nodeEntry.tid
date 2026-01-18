@@ -1,0 +1,92 @@
+created: 20260118014920901
+modified: 20260118063640999
+tags: 
+title: nodeEntry
+type: text/vnd.tiddlywiki
+
+\procedure testCreateNode()
+<$action-createtiddler $basetitle={{{ [{$:/state/new-node-title}] }}} tags={{{ [{$:/state/new-node-level}addsuffix[ ]addsuffix{$:/state/new-node-type}] }}} text={{$:/state/new-node-text}}>
+	<$action-navigate $to={{$:/state/new-node-title}} />
+</$action-createtiddler>
+<$list filter='[{$:/state/new-node-parent}enlist-input[]]'>
+<$action-setfield children={{{ {!!children}enlist-input[]append{$:/state/new-node-title}] }}} />
+</$list>
+\end
+
+\procedure add-to-parent-list()
+<$action-setfield $tiddler="$:/state/new-node-parent" text={{{ [{$:/state/new-node-parent}enlist-input[]append<currentTiddler>] }}} />
+\end
+
+\procedure remove-from-parent-list()
+<$action-setfield $tiddler="$:/state/new-node-parent" text={{{ [{$:/state/new-node-parent}enlist-input[]] +[remove<currentTiddler>] }}} />
+\end
+
+<$let compare-by-modified='[get[modified]]'
+           associated-ctx={{{ [{$:/state/new-node-context}] }}}
+           associated-axis={{{ [{$:/state/new-node-context}get[context-axis]] }}}
+           associated-ctx-icon={{{ [{$:/state/new-node-context}addsuffix[-icon.svg]] }}}
+           parenting={{{ [{$:/state/new-node-parent}enlist-input[]] }}}
+>
+
+
+
+<table><tr><td>
+</td><td>
+<$select tiddler='$:/state/new-node-location' default={{{ [tag[loc]sortsub:number<compare-by-modified>first[]] }}}>
+<$list filter='[tag[loc]]'>
+<option value=<<currentTiddler>> ><$view field='title'/></option>
+</$list>
+</$select>
+</td></tr><tr><td></td><td>
+<$select tiddler='$:/state/new-node-type' default='log'>
+<option value='log'>log</option>
+<option value='int'>int</option>
+</$select></td>
+</tr><tr><td class={{{ [{$:/state/new-node-level}get[colour]addsuffix[ ]addsuffix<associated-axis>addsuffix[ generic]] }}}></td><td>
+<$select tiddler='$:/state/new-node-level' default='dbg'>
+<$list filter='[tag[lvl]]'>
+<option value=<<currentTiddler>> ><$view field='title'/></option>
+</$list>
+</$select></td>
+</tr><tr>
+<td><button disabled=true><scheduler-state><$transclude $tiddler={{{ [<associated-ctx-icon>] }}} /></scheduler-state></button></td>
+<td><$select tiddler='$:/state/new-node-context' default={{{ [tag[context-state]sortsub:number<compare-by-modified>first[]] }}}>
+<$list filter='[tag[context-state]]'>
+<option value=<<currentTiddler>> ><$view field='title'/></option>
+</$list>
+</$select></td>
+</tr></table>
+
+parents: <$edit-text tiddler="$:/state/new-node-parent-search" tag="input" default="" />
+
+<table>
+<tr><td>
+<$list filter='[tag[log]search{$:/state/new-node-parent-search}remove<parenting>first[10]]' >
+<$button actions=<<add-to-parent-list>> > <<currentTiddler>> </$button>
+</$list>
+</td><td>
+<$list filter='[{$:/state/new-node-parent}enlist-input[]]' >
+<$button actions=<<remove-from-parent-list>> > <<currentTiddler>> </$button>
+</$list>
+</td></tr>
+</table>
+<!-- {{{ [tag[node]map[get[children]match<currentTiddler>] }}} 
+create a field that find all nodes that this tiddler is a child of
+
+create parent-to button that lets you select another tiddler to add this tiddler into the children list
+
+probably template this to do so
+-->
+<!-- with-children field lets you quickly create tiddlers that are in children list
+
+also need a thing that indicates unwritten-children (maybe a method for placeholder children) -->
+
+title: <$edit-text tiddler="$:/state/new-node-title" tag="input" default={{{ [{$:/state/new-node-text}split[ ]first[5]join[-]] }}} />
+
+text: <$edit-text tiddler="$:/state/new-node-text" tag="textarea" default="" />
+
+<$button actions=<<testCreateNode>> >
+Create node
+</$button>
+
+</$let>

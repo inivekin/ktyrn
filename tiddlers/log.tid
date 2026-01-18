@@ -1,0 +1,17 @@
+created: 20260118022545910
+modified: 20260118104227533
+tags: 
+title: log
+type: text/vnd.tiddlywiki
+
+<$let by-executed='[get[executed]]'>
+<table>
+<$list filter='[tag[log]filter<by-executed>sortsub<by-executed>]'>
+<tr>
+<td>{{!!ctx}}</td><td>{{!!lvl}}</td><td>{{!!text}}</td>
+</tr>
+</$list>
+<tr><td> {{{ [{schedule!!instruction}get[ctx]] }}}</td><td></td><td><$transclude $tiddler={{{ [{schedule!!instruction}] }}} /></td>
+</tr>
+</table>
+</$let>
