@@ -1,11 +1,12 @@
 created: 20260118014920901
-modified: 20260118063640999
+modified: 20260119103832213
 tags: 
 title: nodeEntry
 type: text/vnd.tiddlywiki
 
 \procedure testCreateNode()
 <$action-createtiddler $basetitle={{{ [{$:/state/new-node-title}] }}} tags={{{ [{$:/state/new-node-level}addsuffix[ ]addsuffix{$:/state/new-node-type}] }}} text={{$:/state/new-node-text}}>
+    <$action-setfield $tiddler={{{ [{$:/state/new-node-title}] }}}  ctx={{{ [{$:/state/new-node-context}] }}} lvl={{{ [{$:/state/new-node-level}] }}} executed="" />
 	<$action-navigate $to={{$:/state/new-node-title}} />
 </$action-createtiddler>
 <$list filter='[{$:/state/new-node-parent}enlist-input[]]'>

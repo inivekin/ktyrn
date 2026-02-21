@@ -1,0 +1,28 @@
+created: 20251207073951036
+modified: 20251229031010290
+tags: 
+title: context-select
+type: text/vnd.tiddlywiki
+
+{{{ [tag[context-state]last-scheduled[true]] }}}
+
+---
+
+{{{ [tag[context-state]last-scheduled[true]get[yieldings]] }}}
+
+---
+
+<$let current-context={{{ [{schedule!!yieldings}split[ ]first[] }}} next-context={{{ [{schedule!!yieldings}split[ ]last[] }}} existing-value={{{ [{schedule!!yieldings}enlist-input[ ]first[]get[scheduled-slots]] }}} supertitle=imu>
+        {{{ [{schedule!!yieldings}enlist-input[ ]first[]] }}}
+        <<existing-value>>
+        {{{ [<next-context>match[hry]then[<existing-value>subtract[1]max[0]else<existing-value>] }}}
+    </$let>
+    <$let next-context={{{ [{schedule!!yieldings}split[ ]last[] }}} existing-value={{{ [{schedule!!yieldings}split[ ]last[]get[scheduled-slots]] }}}>
+     {{{ [<next-context>match[imu]then[<existing-value>add[1]] }}}
+        <$list filter="[{schedule!!yieldings}split[ ]rest[]butlast[]]">
+            <<currentTiddler>>
+            {{{ [<next-context>match<supertitle>then[[imu]get[scheduled-slots]subtract[1]max[0]]] }}}
+        </$list>
+    </$let>
+
+

@@ -1,8 +1,10 @@
 created: 20260118064229196
-executed: 0
-modified: 20260118104312021
+executed: 
+exo: opener-exo
+imu: opener-imu
+modified: 20260221033535389
 qnt: opener-qnt
 rfx: opener-rfx
-tags: 
+tags: log
 title: interrupt/opener
 type: text/vnd.tiddlywiki

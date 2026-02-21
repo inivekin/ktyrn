@@ -2,7 +2,7 @@ created: 20251228094744163
 instruction: interrupt/opener
 interrupts: qnt lut nyb cbm exo rfx bty pzl pgm hry ant imu
 loggers: 
-modified: 20260118104344333
+modified: 20260221033535389
 program-counter: 0
 tags: 
 title: schedule
